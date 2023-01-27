@@ -20,7 +20,9 @@
     <%= f.text_area :body %>
   </div>
 
-  <div>
-    <%= f.submit "Create book" %>
-  </div>
+  <% if f.object.new_record? %>
+    <%= f.submit "Create Book" %>
+  <% else %>
+    <%= f.submit "Update Book" %>
+  <% end %>
 <% end %>
